@@ -1,5 +1,7 @@
 # Database Schema Documentation
 
+![Database Schema](images/database_schema.png)
+
 This document provides an overview of the database schema, including tables and their attributes, for the system.
 
 ## Tables and Attributes
