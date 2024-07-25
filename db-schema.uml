@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1">
+  <uml:Model xmi.id="model" name="UniversityDatabaseSchema" xmlns:xmi="http://www.omg.org/XMI">
+    <packagedElement xmi.type="uml:Class" xmi.id="program" name="program">
+      <ownedAttribute xmi.id="program_id" name="program_id" type="INT"/>
+      <ownedAttribute xmi.id="name" name="name" type="VARCHAR(150)"/>
+      <ownedAttribute xmi.id="program_type" name="program_type" type="INT"/>
+      <ownedAttribute xmi.id="tuition_fee" name="tuition_fee" type="DECIMAL(10, 2)"/>
+      <ownedAttribute xmi.id="description" name="description" type="VARCHAR(500)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="staff_account" name="staff_account">
+      <ownedAttribute xmi.id="staff_account_id" name="staff_account_id" type="INT"/>
+      <ownedAttribute xmi.id="email" name="email" type="VARCHAR(60)"/>
+      <ownedAttribute xmi.id="password" name="password" type="CHAR(32)"/>
+      <ownedAttribute xmi.id="fname" name="fname" type="VARCHAR(50)"/>
+      <ownedAttribute xmi.id="lname" name="lname" type="VARCHAR(100)"/>
+      <ownedAttribute xmi.id="phone" name="phone" type="VARCHAR(20)"/>
+      <ownedAttribute xmi.id="address" name="address" type="VARCHAR(355)"/>
+      <ownedAttribute xmi.id="seniority" name="seniority" type="INT"/>
+      <ownedAttribute xmi.id="citizen_id_number" name="citizen_id_number" type="BIGINT"/>
+      <ownedAttribute xmi.id="tax_code" name="tax_code" type="VARCHAR(20)"/>
+      <ownedAttribute xmi.id="bank_number" name="bank_number" type="BIGINT"/>
+      <ownedAttribute xmi.id="profile_scan" name="profile_scan" type="VARCHAR(255)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="department" name="department">
+      <ownedAttribute xmi.id="department_id" name="department_id" type="INT"/>
+      <ownedAttribute xmi.id="name" name="name" type="VARCHAR(150)"/>
+      <ownedAttribute xmi.id="establish_date" name="establish_date" type="DATE"/>
+      <ownedAttribute xmi.id="description" name="description" type="VARCHAR(500)"/>
+      <ownedAttribute xmi.id="staff_size" name="staff_size" type="INT"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="staff_department_junc" name="staff_department_junc">
+      <ownedAttribute xmi.id="staff_department_junc_id" name="staff_department_junc_id" type="INT"/>
+      <ownedAttribute xmi.id="staff_account_id" name="staff_account_id" type="INT"/>
+      <ownedAttribute xmi.id="department_id" name="department_id" type="INT"/>
+      <ownedAttribute xmi.id="start_at" name="start_at" type="DATE"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="student_account" name="student_account">
+      <ownedAttribute xmi.id="student_account_id" name="student_account_id" type="INT"/>
+      <ownedAttribute xmi.id="email" name="email" type="VARCHAR(60)"/>
+      <ownedAttribute xmi.id="password" name="password" type="CHAR(32)"/>
+      <ownedAttribute xmi.id="fname" name="fname" type="VARCHAR(50)"/>
+      <ownedAttribute xmi.id="lname" name="lname" type="VARCHAR(100)"/>
+      <ownedAttribute xmi.id="phone" name="phone" type="VARCHAR(20)"/>
+      <ownedAttribute xmi.id="address" name="address" type="VARCHAR(355)"/>
+      <ownedAttribute xmi.id="program_id" name="program_id" type="INT"/>
+      <ownedAttribute xmi.id="admission_date" name="admission_date" type="DATE"/>
+      <ownedAttribute xmi.id="graduate_status" name="graduate_status" type="BOOLEAN"/>
+      <ownedAttribute xmi.id="profile_scan" name="profile_scan" type="VARCHAR(255)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="course" name="course">
+      <ownedAttribute xmi.id="course_id" name="course_id" type="INT"/>
+      <ownedAttribute xmi.id="name" name="name" type="VARCHAR(250)"/>
+      <ownedAttribute xmi.id="staff_account_id" name="staff_account_id" type="INT"/>
+      <ownedAttribute xmi.id="description" name="description" type="VARCHAR(500)"/>
+      <ownedAttribute xmi.id="duration_unit" name="duration_unit" type="INT"/>
+      <ownedAttribute xmi.id="semester" name="semester" type="INT"/>
+      <ownedAttribute xmi.id="year" name="year" type="VARCHAR(4)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="enrollment" name="enrollment">
+      <ownedAttribute xmi.id="enrollment_id" name="enrollment_id" type="INT"/>
+      <ownedAttribute xmi.id="student_account_id" name="student_account_id" type="INT"/>
+      <ownedAttribute xmi.id="course_id" name="course_id" type="INT"/>
+      <ownedAttribute xmi.id="semester" name="semester" type="INT"/>
+      <ownedAttribute xmi.id="year" name="year" type="VARCHAR(4)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="submission" name="submission">
+      <ownedAttribute xmi.id="submission_id" name="submission_id" type="INT"/>
+      <ownedAttribute xmi.id="course_id" name="course_id" type="INT"/>
+      <ownedAttribute xmi.id="submission_type" name="submission_type" type="INT"/>
+      <ownedAttribute xmi.id="assignment_id" name="assignment_id" type="INT"/>
+      <ownedAttribute xmi.id="exam_id" name="exam_id" type="INT"/>
+      <ownedAttribute xmi.id="file" name="file" type="VARCHAR(255)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="submission_student_junc" name="submission_student_junc">
+      <ownedAttribute xmi.id="submission_student_junc_id" name="submission_student_junc_id" type="INT"/>
+      <ownedAttribute xmi.id="student_account_id" name="student_account_id" type="INT"/>
+      <ownedAttribute xmi.id="submission_id" name="submission_id" type="INT"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="exam" name="exam">
+      <ownedAttribute xmi.id="exam_id" name="exam_id" type="INT"/>
+      <ownedAttribute xmi.id="file" name="file" type="VARCHAR(255)"/>
+      <ownedAttribute xmi.id="result" name="result" type="VARCHAR(255)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="assignment" name="assignment">
+      <ownedAttribute xmi.id="assignment_id" name="assignment_id" type="INT"/>
+      <ownedAttribute xmi.id="file" name="file" type="VARCHAR(255)"/>
+      <ownedAttribute xmi.id="result" name="result" type="VARCHAR(255)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="grade" name="grade">
+      <ownedAttribute xmi.id="grade_id" name="grade_id" type="INT"/>
+      <ownedAttribute xmi.id="grade" name="grade" type="INT"/>
+      <ownedAttribute xmi.id="student_account_id" name="student_account_id" type="INT"/>
+      <ownedAttribute xmi.id="submission_id" name="submission_id" type="INT"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="schedule" name="schedule">
+      <ownedAttribute xmi.id="schedule_id" name="schedule_id" type="INT"/>
+      <ownedAttribute xmi.id="slot" name="slot" type="INT"/>
+      <ownedAttribute xmi.id="course_id" name="course_id" type="INT"/>
+      <ownedAttribute xmi.id="start_time" name="start_time" type="DATETIME"/>
+      <ownedAttribute xmi.id="end_time" name="end_time" type="DATETIME"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="form" name="form">
+      <ownedAttribute xmi.id="form_id" name="form_id" type="INT"/>
+      <ownedAttribute xmi.id="form_type" name="form_type" type="INT"/>
+      <ownedAttribute xmi.id="staff_account_id" name="staff_account_id" type="INT"/>
+      <ownedAttribute xmi.id="student_account_id" name="student_account_id" type="INT"/>
+      <ownedAttribute xmi.id="form" name="form" type="VARCHAR(255)"/>
+      <ownedAttribute xmi.id="form_scan" name="form_scan" type="VARCHAR(255)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="feedback" name="feedback">
+      <ownedAttribute xmi.id="feedback_id" name="feedback_id" type="INT"/>
+      <ownedAttribute xmi.id="department_id" name="department_id" type="INT"/>
+      <ownedAttribute xmi.id="email" name="email" type="VARCHAR(150)"/>
+      <ownedAttribute xmi.id="feedback" name="feedback" type="TEXT"/>
+      <ownedAttribute xmi.id="attached_file" name="attached_file" type="VARCHAR(255)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="publication" name="publication">
+      <ownedAttribute xmi.id="publication_id" name="publication_id" type="INT"/>
+      <ownedAttribute xmi.id="publication_type" name="publication_type" type="INT"/>
+      <ownedAttribute xmi.id="title" name="title" type="VARCHAR(250)"/>
+      <ownedAttribute xmi.id="expected_budget" name="expected_budget" type="DECIMAL(10, 2)"/>
+      <ownedAttribute xmi.id="actual_budget" name="actual_budget" type="DECIMAL(10, 2)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="publication_researcher_junc" name="publication_researcher_junc">
+      <ownedAttribute xmi.id="publication_researcher_junc_id" name="publication_researcher_junc_id" type="INT"/>
+      <ownedAttribute xmi.id="publication_id" name="publication_id" type="INT"/>
+      <ownedAttribute xmi.id="staff_account_id" name="staff_account_id" type="INT"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="investor" name="investor">
+      <ownedAttribute xmi.id="investor_id" name="investor_id" type="INT"/>
+      <ownedAttribute xmi.id="investor_type" name="investor_type" type="INT"/>
+      <ownedAttribute xmi.id="name" name="name" type="VARCHAR(150)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="investor_publication_junc" name="investor_publication_junc">
+      <ownedAttribute xmi.id="investor_publication_junc_id" name="investor_publication_junc_id" type="INT"/>
+      <ownedAttribute xmi.id="investor_id" name="investor_id" type="INT"/>
+      <ownedAttribute xmi.id="publication_id" name="publication_id" type="INT"/>
+      <ownedAttribute xmi.id="contribution_amount" name="contribution_amount" type="DECIMAL(10, 2)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="event" name="event">
+      <ownedAttribute xmi.id="event_id" name="event_id" type="INT"/>
+      <ownedAttribute xmi.id="expected_budget" name="expected_budget" type="DECIMAL(10, 2)"/>
+      <ownedAttribute xmi.id="actual_budget" name="actual_budget" type="DECIMAL(10, 2)"/>
+      <ownedAttribute xmi.id="description" name="description" type="VARCHAR(500)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="service" name="service">
+      <ownedAttribute xmi.id="service_id" name="service_id" type="INT"/>
+      <ownedAttribute xmi.id="service_type" name="service_type" type="INT"/>
+      <ownedAttribute xmi.id="department_id" name="department_id" type="INT"/>
+      <ownedAttribute xmi.id="description" name="description" type="VARCHAR(500)"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="document" name="document">
+      <ownedAttribute xmi.id="document_id" name="document_id" type="INT"/>
+      <ownedAttribute xmi.id="document_type" name="document_type" type="INT"/>
+      <ownedAttribute xmi.id="name" name="name" type="VARCHAR(250)"/>
+      <ownedAttribute xmi.id="file" name="file" type="VARCHAR(255)"/>
+      <ownedAttribute xmi.id="create_date" name="create_date" type="DATETIME"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="course_document_junc" name="course_document_junc">
+      <ownedAttribute xmi.id="course_document_junc_id" name="course_document_junc_id" type="INT"/>
+      <ownedAttribute xmi.id="course_id" name="course_id" type="INT"/>
+      <ownedAttribute xmi.id="document_id" name="document_id" type="INT"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="library_resource" name="library_resource">
+      <!-- Add attributes for library_resource -->
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="facility" name="facility">
+      <ownedAttribute xmi.id="facility_id" name="facility_id" type="INT"/>
+      <ownedAttribute xmi.id="name" name="name" type="VARCHAR(250)"/>
+      <ownedAttribute xmi.id="code" name="code" type="VARCHAR(20)"/>
+      <ownedAttribute xmi.id="department_id" name="department_id" type="INT"/>
+      <ownedAttribute xmi.id="create_date" name="create_date" type="DATETIME"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="student_club" name="student_club">
+      <ownedAttribute xmi.id="student_club_id" name="student_club_id" type="INT"/>
+      <ownedAttribute xmi.id="name" name="name" type="VARCHAR(150)"/>
+      <ownedAttribute xmi.id="member_size" name="member_size" type="INT"/>
+      <ownedAttribute xmi.id="create_date" name="create_date" type="DATETIME"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="event_club_dept_junc" name="event_club_dept_junc">
+      <ownedAttribute xmi.id="event_club_dept_junc_id" name="event_club_dept_junc_id" type="INT"/>
+      <ownedAttribute xmi.id="event_id" name="event_id" type="INT"/>
+      <ownedAttribute xmi.id="student_club_id" name="student_club_id" type="INT"/>
+      <ownedAttribute xmi.id="department_id" name="department_id" type="INT"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="student_club_junc" name="student_club_junc">
+      <ownedAttribute xmi.id="student_club_junc_id" name="student_club_junc_id" type="INT"/>
+      <ownedAttribute xmi.id="student_club_id" name="student_club_id" type="INT"/>
+      <ownedAttribute xmi.id="student_account_id" name="student_account_id" type="INT"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="tuition_fee" name="tuition_fee">
+      <ownedAttribute xmi.id="tuition_fee_id" name="tuition_fee_id" type="INT"/>
+      <ownedAttribute xmi.id="student_account_id" name="student_account_id" type="INT"/>
+      <ownedAttribute xmi.id="course_id" name="course_id" type="INT"/>
+      <ownedAttribute xmi.id="amount" name="amount" type="DECIMAL(10, 2)"/>
+      <ownedAttribute xmi.id="due_date" name="due_date" type="DATE"/>
+      <ownedAttribute xmi.id="payment_status" name="payment_status" type="INT"/>
+      <ownedAttribute xmi.id="payment_date" name="payment_date" type="DATE"/>
+      <ownedAttribute xmi.id="semester" name="semester" type="INT"/>
+      <ownedAttribute xmi.id="year" name="year" type="INT"/>
+    </packagedElement>
+
+    <packagedElement xmi.type="uml:Class" xmi.id="transaction" name="transaction">
+      <ownedAttribute xmi.id="transaction_id" name="transaction_id" type="INT"/>
+      <ownedAttribute xmi.id="transaction_type" name="transaction_type" type="INT"/>
+      <ownedAttribute xmi.id="transaction_amount" name="transaction_amount" type="DECIMAL(10, 2)"/>
+      <ownedAttribute xmi.id="description" name="description" type="VARCHAR(500)"/>
+      <ownedAttribute xmi.id="payment_method" name="payment_method" type="INT"/>
+      <ownedAttribute xmi.id="payment_date" name="payment_date" type="DATE"/>
+      <ownedAttribute xmi.id="due_date" name="due_date" type="DATE"/>
+      <ownedAttribute xmi.id="semester" name="semester" type="INT"/>
+      <ownedAttribute xmi.id="year" name="year" type="INT"/>
+    </packagedElement>
+  </uml:Model>
+</XMI>
