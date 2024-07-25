@@ -1,5 +1,7 @@
 # Database Schema Documentation
 
+![Database Schema](images/database_schema.png)
+
 This document provides an overview of the database schema, including tables and their attributes, for the system.
 
 ## Tables and Attributes
@@ -8,7 +10,7 @@ This document provides an overview of the database schema, including tables and 
 **Description:** This table stores records related to the teaching programs offered by the institution.
 - **program_id**: Primary key, an integer uniquely identifying each program.
 - **name**: Name of the program, maximum of 150 characters.
-- **program_type**: Type of program, an integer.
+- **program_type**: Type of program, an integer represent for university program, college program or post-graduated program.
 - **tuition_fee**: Tuition fee for the program, a decimal with 10 digits, 2 after the decimal point.
 - **description**: Description of the program, up to 500 characters, nullable.
 
@@ -84,7 +86,7 @@ This document provides an overview of the database schema, including tables and 
 - **file**: Path to the submitted file, up to 255 characters.
 
 ### `submission_student_junc` (for group submissions)
-**Description:** This junction table maps students to their group submissions.
+**Description:** This junction table maps students to their group submissions in case of group project.
 - **submission_student_junc_id**: Primary key, an integer uniquely identifying each group submission.
 - **student_account_id**: Foreign key linked to the `student_account` table.
 - **submission_id**: Foreign key linked to the `submission` table.
@@ -265,6 +267,16 @@ This document provides an overview of the database schema, including tables and 
 - **period_start**: Start date of the payroll period, in YYYY-MM-DD format.
 - **period_end**: End date of the payroll period, in YYYY-MM-DD format.
 - **description**: Description of the payroll, up to 500 characters, nullable.
+
+Note:
+- **semeter**: have 1 digit integer from 1 - 3 according to Spring, Fall and Autumn.
+- **submission_type**: have 1 digit integer from 1 - 4 according to Exam Submission, Assignment Submission, Exam Re-submission and Assignment Re-submission.
+- **slot**: have 1 digit integer from 1 - 4 according to slot 1 (7AM - 9AM), slot 2 (10AM - 1PM), slot 3 (2PM - 5PM) and slot 4 (6PM - 9PM).
+- **publication_type**: have 1 digit integer from 1 - 4 according to Research, Artical, Report and Paper.
+- **investor_type**: have 1 digit integer from 1 - 4 according to Personal, Enterprise, Organization and Government.
+- **service_type**: have 1 digit integer from 1 - 3 according to Tutoring, Career Counseling and Mental Health Support.
+- **document_type**: have 1 digit integer from 1 - 3 according to Book, PDF and Curriculum.
+- **scholarship_type**: have 1 digit integer from 1 - 4 according to scholarship 20%, 50%, 70% and 100%.
 
 ---
 
