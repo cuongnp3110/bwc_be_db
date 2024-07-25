@@ -1,6 +1,6 @@
 # Database Schema Documentation
 
-![Database Schema](images/database_schema.png)
+![Database Schema](images/database_schema2.png)
 
 This document provides an overview of the database schema, including tables and their attributes, for the system.
 
